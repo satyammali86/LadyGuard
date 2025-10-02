@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WomenSafety"
+        tools:targetApi="31">
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AlzaSyhblx0HwIfYOEGw_uJ5I7_YW-Cmjoq1rXp"/>
+
+        <activity
+            android:name=".Activity_howto"
+            android:exported="false"
+            android:theme="@style/Theme.WomenSafety" />
+        <activity
+            android:name=".Activity_selfdefence"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_location"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_parent"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_relatives"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_add_relatives"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_emergency"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_home"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_register"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_login"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_splash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".LocationService" />
+
+        <receiver android:name=".AlarmReceiver" />
+    </application>
+
+</manifest>
